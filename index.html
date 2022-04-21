@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content="Conversor de números online. Convertir bases numéricas: binario, octal, decimal y hexadecimal">
+    <title>Conversor binario, decimal, octal y hexadecimal</title>
+    <!-- https://bootswatch.com/lux/ -->
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"> -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div class="section">
+        <div id="app" class="container is-fluid">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="is-size-2">Convertidor de bases numéricas</h1>
+                    <div v-show="!mostrarNotificacion" class="alert alert-dismissible alert-success">
+                        Este <strong>conversor de bases numéricas</strong> puede convertir entre decimal, binario,
+                        octal y
+                        hexadecimal a cualquier otra base
+                        Escribe el número, selecciona la <strong>base</strong> y la conversión
+                        se hará automáticamente
+                    </div>
+
+                    <div v-show="mostrarNotificacion" class="alert alert-dismissible alert-info">
+                        Copiado al portapapeles <i class="fa fa-check"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label mt-4" for="inputDefault">Digita el número que deseas
+                            convertir:</label>
+                        <input type="text" class="form-control" v-model="numero">
+                    </div>
+
+                    <div class="control">
+                        <p>Convertir desde...</p>
+                        <label class="form-check-label">
+                            <input v-model="baseSeleccionada" class="form-check-input" value="2" type="radio"
+                                name="tipoConversion">
+                            <span class="badge bg-primary">Binario</span>
+                        </label>
+                        <label class="form-check-label">
+                            <input v-model="baseSeleccionada" class="form-check-input" value="8" type="radio"
+                                name="tipoConversion">
+                            <span class="badge bg-primary">Octal</span>
+                        </label>
+                        <label class="form-check-label">
+                            <input v-model="baseSeleccionada" class="form-check-input" value="10" type="radio"
+                                name="tipoConversion">
+                            <span class="badge bg-primary">Decimal</span>
+                        </label>
+                        <label class="form-check-label">
+                            <input v-model="baseSeleccionada" class="form-check-input" value="16" type="radio"
+                                name="tipoConversion">
+                            <span class="badge bg-primary">Hexadecimal</span>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label mt-4" for="inputDefault">BINARIO</label>
+                        <input v-model="binario" type="text" class="form-control" readonly
+                            placeholder="Valor en binario">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label mt-4" for="inputDefault">OCTAL</label>
+                        <input v-model="octal" type="text" class="form-control" readonly placeholder="Valor en octal">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label mt-4" for="inputDefault">DECIMAL</label>
+                        <input v-model="decimal" type="text" class="form-control" readonly
+                            placeholder="Valor en decimal">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label mt-4" for="inputDefault">HEXADECIMAL</label>
+                        <input v-model="hexadecimal" type="text" class="form-control" readonly
+                            placeholder="Valor en hexadecimal">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="">
+            <p>
+
+            </p>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>
